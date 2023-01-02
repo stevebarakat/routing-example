@@ -7,8 +7,8 @@ import {
 
 // pages
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Faq from "./pages/help/Faq";
+import Attorneys from "./pages/Attorneys";
+import ChooseAttorney from "./pages/help/ChooseAttorney";
 import Contact from "./pages/help/Contact";
 
 // layouts
@@ -19,10 +19,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="attorneys" element={<Attorneys />} />
       <Route path="help" element={<HelpLayout />}>
-        <Route path="faq" element={<Faq />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="choose-attorney" element={<ChooseAttorney />} />
+        <Route
+          path="contact"
+          element={<Contact path="help/choose-attorney" />}
+        />
       </Route>
     </Route>
   )
